@@ -6,6 +6,27 @@ if(mysqli_connect_errno()) {
     echo "Failed to connect: " . mysqli_connect_errno();
 }
 
+$name = "";
+$fat =  "";
+$carbs = "";
+$protein = "";
+$kcals = "";
+$price = "";
+$error_array = ""
+
+if(isset($_POST['create_button'])){
+
+
+  $name = strip_tags($_POST['reg_name']);
+  $fat =  strip_tags($_POST['regf_fat']);
+  $carbs = strip_tags($_POST['reg_carbs']);
+  $protein = strip_tags($_POST['reg_protein']);
+  $kcals = strip_tags($_POST['reg_kcals']);
+  $price = strip_tags($_POST['reg_price']);
+
+}
+
+
 ?>
 
 
@@ -45,7 +66,7 @@ if(mysqli_connect_errno()) {
                         <input id="price" name="reg_price" type="text" class="form-control form-control-sm formFoodItem" placeholder="Price" required>
                     </div>
                     <button class="btn btn-secondary" onClick="cancel()">Cancel</button>
-                    <button type="submit" name="register_button" value="Register" class="btn btn-secondary" onClick="createItem()">Create</button>
+                    <button type="submit" name="create_button" value="Create" class="btn btn-secondary" onClick="createItem()">Create</button>
                 </form>
 
             </div>
