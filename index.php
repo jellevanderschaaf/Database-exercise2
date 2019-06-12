@@ -12,13 +12,13 @@ $carbs = "";
 $protein = "";
 $kcals = "";
 $price = "";
-$error_array = ""
+$error_array = "";
 
 if(isset($_POST['create_button'])){
 
   $name = strip_tags($_POST['reg_name']);
   $_SESSION['reg_name'] = $name;
-  $fat = strip_tags($_POST['regf_fat']);
+  $fat = strip_tags($_POST['reg_fat']);
   $_SESSION['reg_fat'] = $fat;
   $carbs = strip_tags($_POST['reg_carbs']);
   $_SESSION['reg_carbs'] = $carbs;
@@ -29,6 +29,11 @@ if(isset($_POST['create_button'])){
   $price = strip_tags($_POST['reg_price']);
   $_SESSION['reg_price'] = $price;
 
+  if(empty($error_array)) {
+  
+  $query = mysqli_query($con, "INSERT INTO food_items VALUES ('', '$name', '$fat', '$carbs', '$protein', '$kcals', '$price')");
+  
+}
 }
 
 
