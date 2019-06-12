@@ -35,17 +35,17 @@ if(mysqli_connect_errno()) {
             <button class="btn btn-secondary" onClick="createFoodItem()">New Food Item</button>
 
             <div id="createFoodItem" class="hidden">
-                <form id="foodForm" action="localhost:3000/createfooditem" method="post">
+                <form id="foodForm" action="index.php" method="POST">
                     <div class="form-group">
-                        <input id="name" type="text" class="form-control form-control-sm formFoodItem" placeholder="Name">
-                        <input id="fat" type="text" class="form-control form-control-sm formFoodItem" placeholder="Fat">
-                        <input id="carbs" type="text" class="form-control form-control-sm formFoodItem" placeholder="Carbs">
-                        <input id="protein" type="text" class="form-control form-control-sm formFoodItem" placeholder="Protein">
-                        <input id="kcals" type="text" class="form-control form-control-sm formFoodItem" placeholder="Kcals">
-                        <input id="price" type="text" class="form-control form-control-sm formFoodItem" placeholder="Price">
+                        <input id="name" name="reg_name" type="text" class="form-control form-control-sm formFoodItem" placeholder="Name" required>
+                        <input id="fat" name="reg_fat" type="text" class="form-control form-control-sm formFoodItem" placeholder="Fat" required>
+                        <input id="carbs" name="reg_carbs" type="text" class="form-control form-control-sm formFoodItem" placeholder="Carbs" required>
+                        <input id="protein" name="reg_protein" type="text" class="form-control form-control-sm formFoodItem" placeholder="Protein" required>
+                        <input id="kcals" name="reg_kcals" type="text" class="form-control form-control-sm formFoodItem" placeholder="Kcals" required>
+                        <input id="price" name="reg_price" type="text" class="form-control form-control-sm formFoodItem" placeholder="Price" required>
                     </div>
                     <button class="btn btn-secondary" onClick="cancel()">Cancel</button>
-                    <button type="submit" class="btn btn-secondary" onClick="createItem()">Create</button>
+                    <button type="submit" name="register_button" value="Register" class="btn btn-secondary" onClick="createItem()">Create</button>
                 </form>
 
             </div>
