@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 $con = mysqli_connect("localhost", "root", "", "diet_tracker");
 
 if(mysqli_connect_errno()) {
@@ -16,13 +16,18 @@ $error_array = ""
 
 if(isset($_POST['create_button'])){
 
-
   $name = strip_tags($_POST['reg_name']);
-  $fat =  strip_tags($_POST['regf_fat']);
+  $_SESSION['reg_name'] = $name;
+  $fat = strip_tags($_POST['regf_fat']);
+  $_SESSION['reg_fat'] = $fat;
   $carbs = strip_tags($_POST['reg_carbs']);
+  $_SESSION['reg_carbs'] = $carbs;
   $protein = strip_tags($_POST['reg_protein']);
+  $_SESSION['reg_protein'] = $protein;
   $kcals = strip_tags($_POST['reg_kcals']);
+  $_SESSION['reg_kcals'] = $kcals;
   $price = strip_tags($_POST['reg_price']);
+  $_SESSION['reg_price'] = $price;
 
 }
 
