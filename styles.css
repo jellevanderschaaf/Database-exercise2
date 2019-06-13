@@ -33,7 +33,7 @@ body {
 .grid-container {
     display: grid;
     justify-content: center;
-    grid-template-columns: 500px;
+    grid-template-columns: 300px;
     grid-gap: 15px;
     height: 1200px;
     width: 100%;
@@ -43,7 +43,7 @@ body {
 
 .grid-item {
     height: 1200px;
-    min-width: 500px;
+    min-width: 300px;
     background-color: #FFFFFF;
     border-radius: 5px;
     text-align: center;

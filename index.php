@@ -6,7 +6,7 @@ if(mysqli_connect_errno()) {
     echo "Failed to connect: " . mysqli_connect_errno();
 }
 
-$name = "";
+$fname = "";
 $fat =  "";
 $carbs = "";
 $protein = "";
@@ -16,8 +16,8 @@ $error_array = "";
 
 if(isset($_POST['create_button'])){
 
-  $name = strip_tags($_POST['reg_name']);
-  $_SESSION['reg_name'] = $name;
+  $fname = strip_tags($_POST['reg_fname']);
+  $_SESSION['reg_fname'] = $fname;
   $fat = strip_tags($_POST['reg_fat']);
   $_SESSION['reg_fat'] = $fat;
   $carbs = strip_tags($_POST['reg_carbs']);
@@ -31,7 +31,7 @@ if(isset($_POST['create_button'])){
 
   if(empty($error_array)) {
   
-  $query = mysqli_query($con, "INSERT INTO food_items VALUES ('', '$name', '$fat', '$carbs', '$protein', '$kcals', '$price')");
+  $query = mysqli_query($con, "INSERT INTO food_items VALUES ('', '$fname', '$fat', '$carbs', '$protein', '$kcals', '$price')");
   
 }
 }
@@ -68,7 +68,7 @@ if(isset($_POST['create_button'])){
             <div id="createFoodItem" class="hidden">
                 <form id="foodForm" action="index.php" method="POST">
                     <div class="form-group">
-                        <input id="name" name="reg_name" type="text" class="form-control form-control-sm formFoodItem" placeholder="Name" required>
+                        <input id="fname" name="reg_fname" type="text" class="form-control form-control-sm formFoodItem" placeholder="Name" required>
                         <input id="fat" name="reg_fat" type="text" class="form-control form-control-sm formFoodItem" placeholder="Fat" required>
                         <input id="carbs" name="reg_carbs" type="text" class="form-control form-control-sm formFoodItem" placeholder="Carbs" required>
                         <input id="protein" name="reg_protein" type="text" class="form-control form-control-sm formFoodItem" placeholder="Protein" required>
@@ -84,79 +84,18 @@ if(isset($_POST['create_button'])){
 
             <div id="test" class="foodList">
 
-                <div class="FoodItem">
-                    <div class="FoodItemName">&bull; minced beef</div>
-                    <button class="btn btn-info add" value="0" onCLick="addFoodItemToList(this.value)">+</button>
-                </div>
-
-                <div class="FoodItem">
-                    <div class="FoodItemName">&bull; egg</div>
-                    <button class="btn btn-info add" value="1" onCLick="addFoodItemToList(this.value)">+</button>
-                </div>
-
-                <div class="FoodItem">
-                    <div class="FoodItemName">&bull; butter</div>
-                    <button class="btn btn-info add" value="2" onCLick="addFoodItemToList(this.value)">+</button>
-                </div>
-
-                <div class="FoodItem">
-                    <div class="FoodItemName">&bull; chicken legg</div>
-                    <button class="btn btn-info add" value="3" onCLick="addFoodItemToList(this.value)">+</button>
-                </div>
-
-                <div class="FoodItem">
-                    <div class="FoodItemName">&bull; mackerel</div>
-                    <button class="btn btn-info add" value="4" onCLick="addFoodItemToList(this.value)">+</button>
-                </div>
-
-                <div class="FoodItem">
-                    <div class="FoodItemName">&bull; sardines</div>
-                    <button class="btn btn-info add" value="5" onCLick="addFoodItemToList(this.value)">+</button>
-                </div>
-
-                <div class="FoodItem">
-                    <div class="FoodItemName">&bull; shrimps</div>
-                    <button class="btn btn-info add" value="6" onCLick="addFoodItemToList(this.value)"> +</button>
-                </div>
-
-                <div class="FoodItem">
-                    <div class="FoodItemName">&bull; kefir</div>
-                    <button class="btn btn-info add" value="7" onCLick="addFoodItemToList(this.value)">+</button>
-                </div>
-
-                <div class="FoodItem">
-                    <div class="FoodItemName">&bull; almond cake</div>
-                    <button class="btn btn-info add" value="8" onCLick="addFoodItemToList(this.value)">+</button>
-                </div>
-
-                <div class="FoodItem">
-                    <div class="FoodItemName">&bull; apple</div>
-                    <button class="btn btn-info add" value="9" onCLick="addFoodItemToList(this.value)">+</button>
-                </div>
-
-                <div class="FoodItem">
-                    <div class="FoodItemName">&bull; blueberries</div>
-                    <button class="btn btn-info add" value="10" onCLick="addFoodItemToList(this.value)">+</button>
-                </div>
-            </div>
+        
             <table>
 <tr>
-<th>id</th>
-<th>name</th>
-<th>fat</th>
-<th>carbs</th>
-<th>protein</th>
-<th>kcals</th>
-<th>price</th>
 </tr>
 <?php
 
-$sql = "SELECT id, fat, carbs, protein, kcals, price from food_items";
+$sql = "SELECT id, fname from food_items";
 $result = $con-> query($sql);
 
 if ($result-> num_rows > 0) {
     while ($row = $result-> fetch_assoc()) {
-        echo "<tr><td>". $row["id"] ."<tr><td>". $row["fat"] ."<tr><td>". $row["carbs"] ."<tr><td>". $row["protein"] ."<tr><td>". $row["kcals"] ."<tr><td>". $row["price"] ."</td></tr>";
+        echo "<tr><td>" . $row["fname"] ."</td></tr>";
     } 
     }
     $con-> close();
