@@ -139,8 +139,23 @@ if(isset($_POST['create_button'])){
                     <button class="btn btn-info add" value="10" onCLick="addFoodItemToList(this.value)">+</button>
                 </div>
             </div>
+            <table>
+<tr>
+<th>id</th>
+<th>name</th>
+<th>fat</th>
+<th>carbs</th>
+<th>protein</th>
+<th>kcals</th>
+<th>price</th>
+</tr>
         </div>
     </div>
+
+
+
+
+
 
 
     <script type="text/javascript" src="javascript.js"></script>
