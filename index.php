@@ -149,6 +149,19 @@ if(isset($_POST['create_button'])){
 <th>kcals</th>
 <th>price</th>
 </tr>
+<?php
+
+$sql = "SELECT id, fat, carbs, protein, kcals, price from food_items";
+$result = $con-> query($sql);
+
+if ($result-> num_rows > 0) {
+    while ($row = $result-> fetch_assoc()) {
+        echo "<tr><td>". $row["id"] ."<tr><td>". $row["fat"] ."<tr><td>". $row["carbs"] ."<tr><td>". $row["protein"] ."<tr><td>". $row["kcals"] ."<tr><td>". $row["price"] ."</td></tr>";
+    } 
+    }
+    $con-> close();
+
+?>
         </div>
     </div>
 
