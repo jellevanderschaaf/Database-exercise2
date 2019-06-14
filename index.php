@@ -29,7 +29,16 @@ if(isset($_POST['create_button'])){
   $price = strip_tags($_POST['reg_price']);
   $_SESSION['reg_price'] = $price;
 
-  if(empty($error_array)) {
+  // Check if fname already exists
+
+$query = "SELECT count(*) as allcount FROM food_items WHERE fname='".$fname."'";
+$result = mysqli_query($con,$query);
+$row = mysqli_fetch_array($result);
+$allcount = $row['allcount'];
+
+  // insert
+
+  if(empty($error_array) && $allcount == 0) {
   
   $query = mysqli_query($con, "INSERT INTO food_items VALUES ('', '$fname', '$fat', '$carbs', '$protein', '$kcals', '$price')");
   
@@ -101,7 +110,9 @@ if ($result-> num_rows > 0) {
     $con-> close();
 
 ?>
+
         </div>
+        
     </div>
 
 
