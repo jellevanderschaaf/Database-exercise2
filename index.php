@@ -77,12 +77,40 @@ $allcount = $row['allcount'];
             <div id="createFoodItem" class="hidden">
                 <form id="foodForm" action="index.php" method="POST">
                     <div class="form-group">
-                        <input id="fname" name="reg_fname" type="text" class="form-control form-control-sm formFoodItem" placeholder="Name" required>
-                        <input id="fat" name="reg_fat" type="text" class="form-control form-control-sm formFoodItem" placeholder="Fat" required>
-                        <input id="carbs" name="reg_carbs" type="text" class="form-control form-control-sm formFoodItem" placeholder="Carbs" required>
-                        <input id="protein" name="reg_protein" type="text" class="form-control form-control-sm formFoodItem" placeholder="Protein" required>
-                        <input id="kcals" name="reg_kcals" type="text" class="form-control form-control-sm formFoodItem" placeholder="Kcals" required>
-                        <input id="price" name="reg_price" type="text" class="form-control form-control-sm formFoodItem" placeholder="Price" required>
+
+                    <table style="width:100%">
+                    <tr>
+    <td>name</td>
+    <td><input id="fname" name="reg_fname" type="text" class="form-control form-control-sm formFoodItem" required></td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td>fat</td>
+    <td><input id="fat" name="reg_fat" type="text" class="form-control form-control-sm formFoodItem" required></td> 
+    <td>grams</td>
+  </tr>
+  <tr>
+    <td>carbs</td>
+    <td><input id="carbs" name="reg_carbs" type="text" class="form-control form-control-sm formFoodItem" required></td> 
+    <td>grams</td>
+  </tr>
+  <tr>
+    <td>protein</td>
+    <td><input id="protein" name="reg_protein" type="text" class="form-control form-control-sm formFoodItem" required></td> 
+    <td>grams</td>
+  </tr>
+  <tr>
+    <td>kcals</td>
+    <td><input id="kcals" name="reg_kcals" type="text" class="form-control form-control-sm formFoodItem" required></td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td>price: €</td>
+    <td><input id="price" name="reg_price" type="text" class="form-control form-control-sm formFoodItem" required></td> 
+    <td></td>
+  </tr>
+  
+</table>     
                     </div>
                     <button class="btn btn-secondary" onClick="cancel()">Cancel</button>
                     <button type="submit" name="create_button" value="Create" class="btn btn-secondary" onClick="createItem()">Create</button>
