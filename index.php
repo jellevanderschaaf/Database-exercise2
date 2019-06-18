@@ -135,12 +135,19 @@ if (isset($_POST['create_button'])) {
 
                     if ($result->num_rows > 0) {
                         while ($row = $result->fetch_assoc()) {
-                            echo "<tr><td>" . $row["fname"] . "</td></tr>";
+                            echo "<tr><td>" . $row["fname"]. "</td><td>" 
+                            . "<button>d</button>" . "</td><td>" 
+                            . "<button>e</button>" . "</td><td>" 
+                            . "<button>+</button>" . "</td></tr>";
+                            
                         }
                     }
                     $con->close();
-
+                  
                     ?>
+
+                
+
 
             </div>
 
