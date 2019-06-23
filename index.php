@@ -125,18 +125,16 @@ if (isset($_POST['create_button'])) {
             <div id="test" class="foodList">
 
 
-                <table>
+            <table>
                     <tr>
                     </tr>
                     <?php
-
                     $sql = "SELECT id, fname from food_items";
                     $result = $con->query($sql);
-
                     if ($result->num_rows > 0) {
                         while ($row = $result->fetch_assoc()) {
                             echo "<tr><td>" . $row["fname"]. "</td><td>" 
-                            . "<button>d</button>" . "</td><td>" 
+                            . "<a rel='".$row['id']."' class='delete' href='javascript:void(0)'>d</a>" . "</td><td>" 
                             . "<button>e</button>" . "</td><td>" 
                             . "<button>+</button>" . "</td></tr>";
                             
@@ -152,9 +150,6 @@ if (isset($_POST['create_button'])) {
             </div>
 
         </div>
-
-
-
 
 
 

@@ -87,3 +87,7 @@ function cancel() {
     document.getElementById('foodForm').reset();
     document.getElementById("createFoodItem").classList.add('hidden');
 }
+
+function deleteItem() {
+
+}
