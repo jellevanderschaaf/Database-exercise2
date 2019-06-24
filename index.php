@@ -136,9 +136,9 @@ if (isset($_POST['create_button'])) {
 
                             echo "<tr>";
 
-                            echo "<td>{$row['id']}</td>";
-                            echo "<td><a rel='".$row['id']."' class='delete-this' href='javascript:void(0)'>{$row['fname']}</a></td>";
-                
+                            echo "<td>{$row['fname']}</td>";
+                            echo "<td><a rel='".$row['id']."' class='delete-this' href='javascript:void(0)'>d</a></td>";
+                            echo "<td><input type='button' class='btn btn-danger add' value='add'></td>";
                 
                             echo "</tr>";
                             
