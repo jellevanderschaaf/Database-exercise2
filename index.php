@@ -159,6 +159,8 @@ if (isset($_POST['create_button'])) {
 
         <script>
 
+$(document).ready(function(){
+
 var id;
 var deletethis = 'delete';
 
@@ -168,12 +170,14 @@ $(".delete-this").on('click', function(){
 var id = $(this).attr('rel');
 
 $.post("delete.php", {id: id, deletethis: deletethis}, function(data){
-
-
-
+    
 });
 
+$(this).parents('tr').remove();
+
 });    
+
+});
 
 </script>
 
