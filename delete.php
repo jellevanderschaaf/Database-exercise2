@@ -30,25 +30,5 @@ die("QUERY FAILED" . mysqli_error($con));
 ?>
 
 
-<script>
 
-$(document).ready(function(){
-
-var id;
-var deletethis = 'delete';
-
-
-$(".delete").on('click', function(){
-
-id = $(".delete").attr('rel');
-
-$.post("delete.php", {id: id, deletethis: deletethis}, function(data){
-
-alert(id);
-
-});
-
-});    
-
-</script>
 
